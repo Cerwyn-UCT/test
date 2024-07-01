@@ -6,7 +6,7 @@ metadata:
     app: redis
 spec:
   revisionHistoryLimit: 1
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: redis
@@ -42,16 +42,5 @@ spec:
   selector:
     app: redis
 
----
 
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: hpa-rollout-example
-spec:
-  maxReplicas: 6
-  minReplicas: 2
-  scaleTargetRef:
-    name: redis-deployment
-  targetCPUUtilizationPercentage: 80
 
