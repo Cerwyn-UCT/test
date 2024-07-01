@@ -52,7 +52,7 @@ metadata:
   labels:
     app: hello
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app: hello
